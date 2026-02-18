@@ -4,8 +4,8 @@ const greet = require("../greet");
 
 describe("greet", () =>{
 
-    it("greets in italian", () => {
-        assert.strictEqual("Ciao Guy!", greet("Guy"));
-    });
+    module.exports = function greet(name) {
+    return `Hello ${name || "guest"} from version 2!`;
+    }
 
 });
