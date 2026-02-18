@@ -5,7 +5,7 @@ const greet = require("../greet");
 describe("greet", () =>{
 
     module.exports = function greet(name) {
-    return `Hello ${name || "guest"} from version 2!`;
-    }
+    return `Hello ${name || "guest"} from V3!`;
+}
 
 });
