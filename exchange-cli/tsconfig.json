@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "types": ["jest", "node"],
     "module": "CommonJS",
     "target": "ES2017",
     "rootDir": "src",
