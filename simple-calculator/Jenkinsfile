@@ -16,10 +16,11 @@ pipeline {
                 }
             }
         }
-        post {
-            always {
-                sendNotification('finished', 'team@example.com')
-            }
+        
+    }
+    post {
+        always {
+            sendNotification('finished', 'team@example.com')
         }
     }
 }
