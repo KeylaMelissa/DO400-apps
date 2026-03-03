@@ -1,30 +1,67 @@
 package com.redhat.simple.calculator;
 
-import java.util.*;
+import java.util.Random;
 
-public class BasicCalculator {
-    public int divide(int dividend, int divisor) {
-        if (divisor == 0)
+/**
+ * Basic calculator that provides arithmetic operations.
+ */
+public final class BasicCalculator {
+
+    /**
+     * Divides two integers.
+     *
+     * @param dividend the number to be divided
+     * @param divisor the number to divide by
+     * @return the division result or Integer.MAX_VALUE if divisor is zero
+     */
+    public int divide(final int dividend, final int divisor) {
+        if (divisor == 0) {
             return Integer.MAX_VALUE;
-        else
+        } else {
             return dividend / divisor;
+        }
     }
 
-    public int subs(int minuend, int subtrahend) {
-        return minuend-subtrahend;
+    /**
+     * Subtracts one number from another.
+     *
+     * @param minuend the number from which another number is subtracted
+     * @param subtrahend the number to subtract
+     * @return the subtraction result
+     */
+    public int subs(final int minuend, final int subtrahend) {
+        return minuend - subtrahend;
     }
 
-    public int sum(int addendA, int addendB) {
-        return addendA+addendB;
+    /**
+     * Adds two numbers.
+     *
+     * @param addendA first number
+     * @param addendB second number
+     * @return the sum of both numbers
+     */
+    public int sum(final int addendA, final int addendB) {
+        return addendA + addendB;
     }
 
-    public int multiply(int multiplicand, int multiplier) {
-        return multiplicand*multiplier;
+    /**
+     * Multiplies two numbers.
+     *
+     * @param multiplicand first number
+     * @param multiplier second number
+     * @return the multiplication result
+     */
+    public int multiply(final int multiplicand, final int multiplier) {
+        return multiplicand * multiplier;
     }
 
-    public int Random() {
-        Random r = new Random();
-
-        return r.nextInt();
+    /**
+     * Generates a random integer.
+     *
+     * @return a random integer value
+     */
+    public int random() {
+        final Random random = new Random();
+        return random.nextInt();
     }
 }
