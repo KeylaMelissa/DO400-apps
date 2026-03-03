@@ -1,17 +1,17 @@
 package com.redhat.simple.calculator;
 
 public final class AdvancedCalculator {
-    public static final double PI = 3.14;
-    public static final double LOW_DISCOUNT_AMOUNT = 0.10;
-    public static final double MID_DISCOUNT_AMOUNT = 0.15;
-    public static final double HIGH_DISCOUNT_AMOUNT = 0.20;
-    public static final double VIP_DISCOUNT_AMOUNT = 0.25;
-    public static final double MINIMUM_PURCHASE_AMOUNT = 10;
-    public static final double LOW_PURCHASE_AMOUNT = 100;
-    public static final double HIGH_PURCHASE_AMOUNT = 3000;
-    public static final int BRONZE_CUSTOMER_SEGMENT = 1;
-    public static final int SILVER_CUSTOMER_SEGMENT = 2;
-    public static final int GOLD_CUSTOMER_SEGMENT = 3;
+    static final double PI = 3.14;
+    static final double LOW_DISCOUNT_AMOUNT = 0.10;
+    static final double MID_DISCOUNT_AMOUNT = 0.15;
+    static final double HIGH_DISCOUNT_AMOUNT = 0.20;
+    static final double VIP_DISCOUNT_AMOUNT = 0.25;
+    static final double MINIMUM_PURCHASE_AMOUNT = 10;
+    static final double LOW_PURCHASE_AMOUNT = 100;
+    static final double HIGH_PURCHASE_AMOUNT = 3000;
+    static final int BRONZE_CUSTOMER_SEGMENT = 1;
+    static final int SILVER_CUSTOMER_SEGMENT = 2;
+    static final int GOLD_CUSTOMER_SEGMENT = 3;
 
     public int divide(final int dividend, final int divisor) {
         if (divisor == 0) {
