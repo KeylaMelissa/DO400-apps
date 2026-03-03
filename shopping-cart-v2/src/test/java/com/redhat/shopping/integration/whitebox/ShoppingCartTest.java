@@ -25,8 +25,8 @@ public class ShoppingCartTest {
     @Inject
     CartService cartService;
 
-    @BeforeAll
-    public static void setup() {
+    @BeforeEach
+    public void setup() {
         CatalogStorage mockStorage = Mockito.mock(CatalogStorage.class);
 
         Mockito.when(mockStorage.containsKey(1)).thenReturn(true);
