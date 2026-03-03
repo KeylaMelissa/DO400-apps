@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+import io.quarkus.arc.DefaultBean;
 
 @ApplicationScoped
 @DefaultBean
