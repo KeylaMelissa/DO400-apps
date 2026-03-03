@@ -6,7 +6,7 @@ pipeline {
             options { timeout(time: 50, unit: 'SECONDS') }
             steps {
                 dir('shopping-cart-v2') {
-                    sh './mvnw clean test'
+                    sh './mvnw clean test -Dgroups=integration'
                 }
             }
         }
