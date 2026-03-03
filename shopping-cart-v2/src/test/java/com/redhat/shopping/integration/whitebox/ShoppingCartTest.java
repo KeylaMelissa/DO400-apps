@@ -27,7 +27,7 @@ public class ShoppingCartTest {
 
     @BeforeAll
     public static void setup() {
-        CatalogStorage mockStorage = Mockito.mock(InMemoryCatalogStorage.class);
+        CatalogStorage mockStorage = Mockito.mock(CatalogStorage.class);
 
         Mockito.when(mockStorage.containsKey(1)).thenReturn(true);
         Mockito.when(mockStorage.containsKey(9999)).thenReturn(false);
