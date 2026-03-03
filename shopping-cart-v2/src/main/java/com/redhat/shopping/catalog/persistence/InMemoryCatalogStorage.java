@@ -10,6 +10,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @ApplicationScoped
+@DefaultBean
 public class InMemoryCatalogStorage implements CatalogStorage {
 
     private final Map<Integer, Product> storage = new HashMap<>();
