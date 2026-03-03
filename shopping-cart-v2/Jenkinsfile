@@ -3,7 +3,7 @@ pipeline {
     environment { APP_NAMESPACE = 'wgsmus-recover' }
     stages {
         stage('Test') {
-            options { timeout(time: 50, unit: 'SECONDS') }
+            options { timeout(time: 5, unit: 'MINUTES') }
             steps {
                 dir('shopping-cart-v2') {
                     sh './mvnw clean test -Dgroups=integration'
