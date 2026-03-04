@@ -8,11 +8,9 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
-import javax.enterprise.inject.Default;
 
 
 @ApplicationScoped
-@Default
 public class InMemoryCatalogStorage implements CatalogStorage {
 
     private final Map<Integer, Product> storage = new HashMap<>();
