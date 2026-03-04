@@ -17,6 +17,13 @@ public class CartService {
 
     @Inject
     Catalog catalog;   // 👈 inyección por campo (simple y estable)
+  
+    public CartService(Catalog catalog) {
+        this.catalog = catalog;
+    }
+
+    public CartService() {
+    }
 
     private void recalculate() {
         this.totalItems = 0;
