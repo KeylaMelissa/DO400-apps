@@ -5,6 +5,7 @@ import com.redhat.shopping.catalog.Product;
 import com.redhat.shopping.catalog.ProductNotFoundInCatalogException;
 
 import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -14,15 +15,11 @@ public class CartService {
     private final Map<Integer, CartItem> products = new HashMap<>();
     private int totalItems = 0;
 
-    private final Catalog catalog;
-
-    public CartService(Catalog catalog) {
-        this.catalog = catalog;
-    }
+    @Inject
+    Catalog catalog;   // 👈 inyección por campo (simple y estable)
 
     private void recalculate() {
         this.totalItems = 0;
-
         this.products.forEach((id, cartItem) -> {
             this.totalItems += cartItem.getQuantity();
         });
@@ -36,7 +33,6 @@ public class CartService {
         }
 
         this.products.get(product.id()).increaseQuantityBy(quantity);
-
         this.recalculate();
     }
 
@@ -49,7 +45,9 @@ public class CartService {
         return new CartView(this.products.values(), this.totalItems());
     }
 
-    public void removeProduct(int productId) throws ProductNotFoundInCatalogException, ProductNotInCartException {
+    public void removeProduct(int productId)
+            throws ProductNotFoundInCatalogException, ProductNotInCartException {
+
         Product product = this.catalog.ofId(productId);
 
         if (!this.products.containsKey(product.id())) {
@@ -57,7 +55,6 @@ public class CartService {
         }
 
         this.products.remove(product.id());
-
         this.recalculate();
     }
 

@@ -11,7 +11,7 @@ import java.util.Map;
 import io.quarkus.arc.DefaultBean;
 
 @ApplicationScoped
-@DefaultBean
+@Default
 public class InMemoryCatalogStorage implements CatalogStorage {
 
     private final Map<Integer, Product> storage = new HashMap<>();
