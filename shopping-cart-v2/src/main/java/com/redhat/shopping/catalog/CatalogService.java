@@ -7,19 +7,13 @@ import java.util.Collection;
 @ApplicationScoped
 public class CatalogService implements Catalog {
 
-    private CatalogStorage storage;
+    @Inject
+    CatalogStorage storage;
 
-    // 🔹 Constructor vacío para CDI
     public CatalogService() {
     }
 
-    // 🔹 Constructor para unit tests
     public CatalogService(CatalogStorage storage) {
-        this.storage = storage;
-    }
-
-    @Inject
-    public void setStorage(CatalogStorage storage) {
         this.storage = storage;
     }
 
@@ -28,6 +22,7 @@ public class CatalogService implements Catalog {
         return this.storage.getAll();
     }
 
+    @Override
     public Product ofId(int id) throws ProductNotFoundInCatalogException {
         if (!this.storage.containsKey(id)) {
             throw ProductNotFoundInCatalogException.ofId(id);
