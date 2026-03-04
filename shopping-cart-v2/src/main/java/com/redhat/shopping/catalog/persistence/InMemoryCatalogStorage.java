@@ -4,13 +4,18 @@ import com.redhat.shopping.catalog.CatalogStorage;
 import com.redhat.shopping.catalog.Product;
 
 import javax.enterprise.context.ApplicationScoped;
+import javax.enterprise.inject.Alternative;
+import javax.annotation.Priority;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
 
+
 @ApplicationScoped
+@Alternative
+@Priority(1)
 public class InMemoryCatalogStorage implements CatalogStorage {
 
     private final Map<Integer, Product> storage = new HashMap<>();
